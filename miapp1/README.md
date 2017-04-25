@@ -25,9 +25,20 @@ Las herramientas que vamos a usar son:
 
 ![imagen](https://assets-cdn.github.com/images/modules/open_graph/github-octocat.png "GitHub")
 
+## Codigo
+Para utilizar codigo necesitamos tres tildes al reves ``` tanto al inicio como al final de el codigo que vamos a escribir.
+
+```
+String hola= "Hola Mundo"
+```
+```
+>> sails new Aplicacion
+>> cd aplicacion
+>> sails lift
+```
 
 
 
 
 
-a [Sails](http://sailsjs.org) application
+
