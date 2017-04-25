@@ -1,6 +1,7 @@
 # Comandos Sails
 
 ![imagen](https://cdn.scotch.io/388/zNlmRgzT9q8atdtEq3qV_angularsails.png.jpg)
+
 [Ir documentacion sails cli](http://sailsjs.com/documentation/reference/command-line-interface)
 ## sails new
 
