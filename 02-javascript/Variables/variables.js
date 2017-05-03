@@ -107,7 +107,7 @@ console.log(matriz[0][0]);
 var arregloDeObjetos=[
     {
         id:1,
-        nombre:'jose'
+        nombre:'Adrian'
     },
     {
         id:2,
@@ -116,5 +116,15 @@ var arregloDeObjetos=[
 
 ];
 
+//Eliminar Posiciones
+//splice delimita la posicion en la que vanos a trabjar
+//numero de objetos a eliminar
+
+console.log('Nombres',arregloDeObjetos);
+arregloDeObjetos.splice(0,1);
+console.log('Nombres',arregloDeObjetos);
+
+//Añadir un objeto a un array
+arregloDeObjetos.splice(0,0,{id:3,nombre:'Lilian'});
 console.log('Nombres',arregloDeObjetos);
 
