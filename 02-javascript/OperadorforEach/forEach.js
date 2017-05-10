@@ -18,7 +18,7 @@ function nuevoForEach(arreglo,funcion)
 {
     for(var i=0; i<arreglo.length;i++)
     {
-        function(arreglo[i],i,arreglo);
+       // function(arreglo[i],i,arreglo);
         //current value
         //console.log(arreglo[i])
         //indix
