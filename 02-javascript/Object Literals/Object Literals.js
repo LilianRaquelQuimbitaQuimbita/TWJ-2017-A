@@ -16,4 +16,3 @@ var nuevaFuncion =(nombre,apellido)=>{
 }
 nuevaFuncion('Lilian',' Quimbita')
 
- 
