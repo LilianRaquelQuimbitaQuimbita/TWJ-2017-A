@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-inicioo',
@@ -7,9 +7,48 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IniciooComponent implements OnInit {
 
-  constructor() { }
+  nombre: String = "Lilian";
 
-  ngOnInit() {
+  //ctrl +alt y luego ctrl +alt+l
+  arregloUsuarios = [
+    {
+      nombre: "Lilian",
+      apellido:"Quimbita"
+    },
+    {
+      nombre: "Mashi",
+      apellido:"Correo",
+    },
+    {
+      nombre: "Raquel",
+      apellido: "Vega",
+    }
+  ]
+
+  constructor() {
   }
 
+  ngOnInit() {
+    // this.nombre="Lilian"
+  }
+
+  cambiarNombre(): void {
+
+    this.nombre = "Lilian a Raquel";
+
+  }
+
+  cambiarOtroNombre(): void {
+
+    this.nombre = "Lilian a Raquel";
+  }
+
+  cambiarNombreInput(nombreEtiqueta) {
+
+    console.log(nombreEtiqueta.value);
+    console.log(nombreEtiqueta.type);
+    console.log(nombreEtiqueta.placeholder);
+
+
+  }
 }
