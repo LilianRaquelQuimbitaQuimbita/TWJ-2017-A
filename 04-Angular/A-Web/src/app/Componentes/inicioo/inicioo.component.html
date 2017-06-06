@@ -1,23 +1,59 @@
+
+
+
+ <!--SEGUND
+O
+ Primera fila--
+
+
+    <!--CARTAS-->
 <div class="container">
   <h1>Bienvenidos</h1>
   <h2>Usuarios Conectados</h2>
 
   <div class="row" >
-    <div class="col-sm-4" *ngFor="let usuario of arregloUsuarios">
-      <div class="card" style="width: 20rem;">
+    <div *ngFor= "let usuario of arregloUsuarios">
+    <div class="col-sm-4" *ngIf="usuario.conectado">
+      <div class="card" style="width: 10rem;">
         <div class="card-block">
-          <h4 class="card-title">{{usuario.nombre}}</h4>
-          <p class="card-text">{{usuario.nombre}} +{{usuario.apellido}}.</p>
+          <h4 *ngIf="usuario.conectado" class="card-title">{{usuario.nombre}}</h4>
+          <p class="card-text">{{usuario.nombre}} -{{usuario.conectado}}.</p>
           <a href="#" class="btn btn-primary btn-block">Ir a Perfil</a>
         </div>
       </div>
+    </div>
     </div>
   </div>
 
 
 </div>
 
-<!--
+ <h2>Planetas Stars Wars</h2>
+ <br>
+ <button class="btn btn-success" (click)="cagarPlanetas()">Cargar Planetas</button>
+
+ <div class="row">
+   <div *ngFor="let planet of planetas">
+     <h1>{{planet.name}}</h1>
+   </div>
+
+ </div>
+ <!--Otra Directiva-->
+ <!--Para usar las sentencias de control
+  usar primero el *ng y despues la sentencia
+  lo que se escribe dentro de las comillas es javascript puro-->
+ <br>
+ <br>
+ <p *ngIf="true">Hola</p>
+ <p *ngIf="false">Adios</p>
+ <p *ngIf="(1+1)==2">Hola</p>
+ <p *ngIf="(1+1)!=2">Adios</p>
+ <p *ngIf="undefined">undefined</p>
+ <p *ngIf="null">null</p>
+ <p *ngIf="0">Cero</p>
+ <p *ngIf="nombre">Nombre</p>
+
+ <!--
 <div class="container">
 
   <!--
