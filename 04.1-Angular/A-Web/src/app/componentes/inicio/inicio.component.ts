@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Http} from "@angular/http";
 import 'rxjs/add/operator/map';
 import {PlanetaStarWarsInterface} from "app/Interfaces/PlanetaStarWars";
+import {UsuarioClass} from "../../Clases/UsuarioClass";
 
 @Component({
   selector: 'app-inicio',
@@ -11,7 +12,11 @@ import {PlanetaStarWarsInterface} from "app/Interfaces/PlanetaStarWars";
 export class InicioComponent implements OnInit {
 
   nombre: string = "Lilian";
+
+  usuarios:UsuarioClass [] = [];
+  nuevoUsuario:UsuarioClass =new UsuarioClass("");
   planetas : PlanetaStarWarsInterface[] = [];
+
   arregloUsuarios = [
     {
       nombre : "Lilian",
@@ -36,6 +41,19 @@ export class InicioComponent implements OnInit {
     //PERO EL COMPONENTE NO ESTA LISTO!!!!
   }
   ngOnInit() {
+
+    //para ver que se esta guardadndo el el nuevo usuario
+    //console.log('Nuevo Ususario ',this.nuevoUsuario);
+    this._http.get("http://localhost:1337/Usuario").subscribe(
+      respuesta=>{
+        let rjson:UsuarioClass[] =respuesta.json();
+        this.usuarios=rjson;
+        console.log("Usuarios: ",this.usuarios);
+      },
+      error=>{
+        console.log("Error",error)
+      }
+    )
   }
   cambiarNombre(): void {
     console.log("Entro");
@@ -101,4 +119,29 @@ export class InicioComponent implements OnInit {
       )
   }
 
+  crearUsuario()
+  {
+    console.log("Entro a crear Usuario");
+    /*let usuario:UsuarioClass ={
+      nombre:this.nuevoUsuario.nombre
+    };*/
+    this._http.post("http://localhost:1337/Usuario",this.nuevoUsuario).subscribe(respuesta=>{
+      let respuestaJson = respuesta.json();
+      console.log('respuestaJson: ',respuestaJson);
+    },
+    error=>{
+      console.log("Error ",error);
+    })
+    //el subscribe me sirve para los rquest
+  }
 }
+
+/*class UsuarioClass{
+  nombre:string;
+  constructor(nombre?:string)
+  {
+    this.nombre=nombre;
+
+  }
+}
+*/
