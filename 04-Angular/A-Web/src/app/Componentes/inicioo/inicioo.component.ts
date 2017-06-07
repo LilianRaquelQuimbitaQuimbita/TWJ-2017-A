@@ -10,29 +10,30 @@ import 'rxjs/add/operator/map';
 export class IniciooComponent implements OnInit {
 
   nombre: String = "Lilian";
-  planetas: =[];
+  // planetas: =[];
+  planetas: PlanetaStarWars[] = [];
 
   //ctrl +alt y luego ctrl +alt+l
   arregloUsuarios = [
     {
       nombre: "Andrea",
-      apellido:"Quimbita",
-      conectado:false,
+      apellido: "Quimbita",
+      conectado: false,
     },
     {
       nombre: "Mashi",
-      apellido:"Correo",
-      conectado:true
+      apellido: "Correo",
+      conectado: true
     },
     {
       nombre: "Raquel",
       apellido: "Vega",
-      conectado:true
+      conectado: true
     },
     {
       nombre: "Juan",
       apellido: "Vega",
-      conectado:true
+      conectado: true
 
     }
   ]
@@ -40,7 +41,7 @@ export class IniciooComponent implements OnInit {
   //servicio http
   //inicia la clase pero el componente no esta listo es decir no puedo usar
   //algunos componenetes El componenete no esta listo
-  constructor(private _http:Http) {
+  constructor(private _http: Http) {
 
   }
 
@@ -69,27 +70,44 @@ export class IniciooComponent implements OnInit {
 
 
   }
-  cagarPlanetas()
-  {
+
+  cargarPlanetas() {
     //vamos a ingresar tres funciones como parameetros try catch and finally
     this._http.get("http://swapi.co/api/planets").subscribe(
-      (response)=>{
-        console.log("Response",response);
+      (response) => {
+        console.log("Response", response);
         console.log(response.json());
-        let respuesta=response.json();
+        let respuesta = response.json();
         console.log(respuesta.next);
-        this.planetas=respuesta.results;
+        // this.planetas=respuesta.results;
       },
-      (error)=>{
-        console.log("Error",error);
+      (error) => {
+        console.log("Error", error);
       },
-      ()=>{
+      () => {
         console.log("Finally");
 
       }
     )
   }
-  interface PlanetaStarwars{
 
 }
-}
+   interface PlanetaStarWars{
+   name: string;
+   rotation_period: string;
+   orbital_period: string;
+   diameter: string;
+   climate: string;
+   gravity: string;
+   terrain: string;
+   surface_water: string;
+   population: string;
+   residents: string[];
+   films: string[];
+   created: Date;
+   edited: Date;
+   url: string;
+   }
+
+
+

@@ -1,0 +1,34 @@
+
+</div>
+
+<h2>Planetas Stars Wars</h2>
+<br>
+<button class="btn btn-outline-success" (click)="cargarPlanetas()">Cargar Planetas</button>
+
+
+<div class="row">
+  <div *ngFor="let planet of planetas">
+    <h1>{{planet.name}}</h1>
+    <div class="datosplanetas">
+      <p>Periodo de Rotacion:  {{planet.rotation_period}}</p>
+      <p>Periodo Orbital: {{planet.orbital_perio}}</p>
+      <p>Diametro: {{planet.diameter}}</p>
+      <p>Clima: {{planet.climate}}</p>
+      <p>Gravedad: {{planet.gravity}}</p>
+      <p>Terrono: {{planet.terrain}}</p>
+      <p>Superficie del Agua: {{planet.surface_water}}</p>
+      <p>Poblacion: {{planet.population}}</p>
+      <p>Residentes: {{planet.residents}}</p>
+      <p>Films: {{planet.films}}</p>
+      <p>Creado: {{planet.created}}</p>
+      <p>Editado: {{planet.edited}}</p>
+      <p>URL: {{planet.url}}</p>
+      <br>
+      <br>
+    </div>
+  </div>
+
+
+
+</div>
+

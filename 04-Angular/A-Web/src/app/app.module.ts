@@ -7,12 +7,14 @@ import {HttpModule} from "@angular/http";
 import {NgModule} from "@angular/core";
 import { EstiloComponent } from './estilo/estilo.component';
 import { IniciooComponent } from './Componentes/inicioo/inicioo.component';
+import { PlanetasComponent } from './Componentes/planetas/planetas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EstiloComponent,
-    IniciooComponent
+    IniciooComponent,
+    PlanetasComponent
   ],
   imports: [
     BrowserModule,
