@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Http} from "@angular/http";
+
 import 'rxjs/add/operator/map';
 import {PlanetaStarWarsInterface} from "app/Interfaces/PlanetaStarWars";
 import {UsuarioClass} from "../../Clases/UsuarioClass";
@@ -54,6 +55,7 @@ export class InicioComponent implements OnInit {
         console.log("Error",error)
       }
     )
+    console.log('Nuevo Usuario: ',this.nuevoUsuario)
   }
   cambiarNombre(): void {
     console.log("Entro");
@@ -70,10 +72,7 @@ export class InicioComponent implements OnInit {
     console.log(nombreEtiqueta.value);
     console.log(nombreEtiqueta.type);
     console.log(nombreEtiqueta.placeholder);
-
-
     this.nombre = nombreEtiqueta.value;
-
   }
 
   cargarPlanetas(){
@@ -128,10 +127,12 @@ export class InicioComponent implements OnInit {
     this._http.post("http://localhost:1337/Usuario",this.nuevoUsuario).subscribe(respuesta=>{
       let respuestaJson = respuesta.json();
       console.log('respuestaJson: ',respuestaJson);
+      this.usuarios.push(respuestaJson)
     },
     error=>{
       console.log("Error ",error);
-    })
+    }
+    )
     //el subscribe me sirve para los rquest
   }
 }

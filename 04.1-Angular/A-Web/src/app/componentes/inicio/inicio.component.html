@@ -1,11 +1,11 @@
-<div class="container">
 
+<div class="container">
+  <!--Aqui Inicia el tema de comunicaicon entre sails y angular-->
   <h1>Bienvenidos</h1>
   <h2>Usuarios</h2>
   <div class="row">
     <div class="col-sm-6">
       <div class="form-group">
-
         <!--Formularios-->
         <!--el pre | sirve para que me aparezca el json en la web-->
         <pre>
@@ -19,12 +19,13 @@
                [(ngModel)]="nuevoUsuario.nombre"
                 type="text"
                 >
-
       </div>
       <button class="btn btn-success" (click)="crearUsuario()">Crear Usuario
       </button>
     </div>
   </div>
+
+  <!--PLANETAS -->
 
   <button class="btn btn-outline-success" (click)="cargarPlanetas()">Cargar Planetas</button>
 
