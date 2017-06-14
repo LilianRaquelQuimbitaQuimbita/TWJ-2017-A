@@ -2,7 +2,7 @@
 <div class="container">
   <!--Aqui Inicia el tema de comunicaicon entre sails y angular-->
   <h1>Bienvenidos</h1>
-  <h2>Usuarios</h2>
+  <h2>Json</h2>
   <div class="row">
     <div class="col-sm-6">
       <div class="form-group">
@@ -24,9 +24,22 @@
       </button>
     </div>
   </div>
+  <br>
+  <br>
+<h3> Usuarios Ingresados</h3>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let usuario of usuarios; let indice = index;">
+      <h3>{{usuario.nombre}}</h3>
+     </div>
+  </div>
+
 
   <!--PLANETAS -->
 
+  <br>
+  <br>
   <button class="btn btn-outline-success" (click)="cargarPlanetas()">Cargar Planetas</button>
 
   <div class="row">
