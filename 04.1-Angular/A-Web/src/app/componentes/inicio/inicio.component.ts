@@ -75,49 +75,6 @@ export class InicioComponent implements OnInit {
     this.nombre = nombreEtiqueta.value;
   }
 
-  cargarPlanetas(){
-    this._http
-      .get("http://swapi.co/api/planets")
-      //.map(response=>response.json()
-      .subscribe(
-        (response)=>{
-          console.log("Response:",response);
-
-          console.log(response.json());
-
-          let respuesta = response.json();
-
-          console.log(respuesta.next);
-
-           this.planetas = respuesta.results;
-
-           this.planetas = this.planetas.map(
-             (planeta)=>{
-
-              planeta.imagenURL = "/assets/Imagenes/"+planeta.name+'.jpg';
-
-              return planeta;
-
-
-            }
-          );
-
-          //Arreglo que tengo
-          // MUTARLE
-          // MISMO ARREGLO CON UN NUEVO ATRIBUTO
-          // IMAGEN
-
-        },
-        (error)=>{
-          console.log("Error:",error);
-        },
-        ()=>{
-          console.log("Finally");
-        }
-
-      )
-  }
-
   crearUsuario()
   {
     console.log("Entro a crear Usuario");
@@ -155,6 +112,43 @@ export class InicioComponent implements OnInit {
       )
 
   }
+
+  cargarPlanetas(){
+    this._http
+      .get("http://swapi.co/api/planets")
+      //.map(response=>response.json()
+      .subscribe(
+        (response)=>{
+          console.log("Response:",response);
+
+          console.log(response.json());
+
+          let respuesta = response.json();
+
+          console.log(respuesta.next);
+
+          this.planetas = respuesta.results;
+
+          this.planetas = this.planetas.map(
+            (planeta)=>{
+
+              planeta.imagenURL = "/assets/Imagenes/"+planeta.name+'.jpg';
+
+              return planeta;
+            }
+          );
+
+        },
+        (error)=>{
+          console.log("Error:",error);
+        },
+        ()=>{
+          console.log("Finally");
+        }
+
+      )
+  }
+
 }
 
 /*class UsuarioClass{

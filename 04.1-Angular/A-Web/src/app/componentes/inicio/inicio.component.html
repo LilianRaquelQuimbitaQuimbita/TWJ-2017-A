@@ -44,14 +44,20 @@
 
   <br>
   <br>
+  <br>
+  <br>
+  <br>
+  <h3>Planetas</h3>
+  <br>
+  <br>
   <button class="btn btn-outline-success" (click)="cargarPlanetas()">Cargar Planetas</button>
-
+  <br>
+  <br>
   <div class="row">
     <div class="col-sm-4"
          *ngFor="let planeta of planetas;let i = index;">
 
-      <app-planeta-star-wars [planeta]="planeta">
-
+      <app-planeta-star-wars [planeta] ="planeta">
       </app-planeta-star-wars>
 
     </div>
