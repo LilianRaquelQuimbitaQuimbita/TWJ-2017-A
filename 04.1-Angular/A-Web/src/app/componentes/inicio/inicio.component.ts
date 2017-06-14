@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Http} from "@angular/http";
+
 import 'rxjs/add/operator/map';
 import {PlanetaStarWarsInterface} from "app/Interfaces/PlanetaStarWars";
 import {UsuarioClass} from "../../Clases/UsuarioClass";
@@ -54,6 +55,7 @@ export class InicioComponent implements OnInit {
         console.log("Error",error)
       }
     )
+    console.log('Nuevo Usuario: ',this.nuevoUsuario)
   }
   cambiarNombre(): void {
     console.log("Entro");
@@ -70,9 +72,44 @@ export class InicioComponent implements OnInit {
     console.log(nombreEtiqueta.value);
     console.log(nombreEtiqueta.type);
     console.log(nombreEtiqueta.placeholder);
-
-
     this.nombre = nombreEtiqueta.value;
+  }
+
+  crearUsuario()
+  {
+    console.log("Entro a crear Usuario");
+    /*let usuario:UsuarioClass ={
+      nombre:this.nuevoUsuario.nombre
+    };*/
+    this._http.post("http://localhost:1337/Usuario",this.nuevoUsuario).subscribe(respuesta=>{
+      let respuestaJson = respuesta.json();
+      console.log('respuestaJson: ',respuestaJson);
+      this.usuarios.push(respuestaJson)
+    },
+    error=>{
+      console.log("Error ",error);
+    }
+    )
+    //el subscribe me sirve para los rquest
+  }
+  eliminarUsuario(usuario: UsuarioClass, indice: number) {
+
+    //console.log("Indice:", this.usuarios.indexOf(usuario));
+    //console.log("Indice con index: ", indice);
+    //console.log("Usuarios : ", this.usuarios);
+    //console.log("Usuario con id : ", usuario.id);
+
+    this.usuarios.splice(indice,1);
+
+    this._http.delete("http://localhost:1337/Usuario?id="+usuario.id)
+      .subscribe(respuesta=>{
+          let respuestaJson=respuesta.json();
+          console.log('respuesta: ',respuestaJson);
+        },
+        error=>{
+          console.log("Error ", error)
+        }
+      )
 
   }
 
@@ -90,23 +127,16 @@ export class InicioComponent implements OnInit {
 
           console.log(respuesta.next);
 
-           this.planetas = respuesta.results;
+          this.planetas = respuesta.results;
 
-           this.planetas = this.planetas.map(
-             (planeta)=>{
+          this.planetas = this.planetas.map(
+            (planeta)=>{
 
               planeta.imagenURL = "/assets/Imagenes/"+planeta.name+'.jpg';
 
               return planeta;
-
-
             }
           );
-
-          //Arreglo que tengo
-          // MUTARLE
-          // MISMO ARREGLO CON UN NUEVO ATRIBUTO
-          // IMAGEN
 
         },
         (error)=>{
@@ -119,21 +149,6 @@ export class InicioComponent implements OnInit {
       )
   }
 
-  crearUsuario()
-  {
-    console.log("Entro a crear Usuario");
-    /*let usuario:UsuarioClass ={
-      nombre:this.nuevoUsuario.nombre
-    };*/
-    this._http.post("http://localhost:1337/Usuario",this.nuevoUsuario).subscribe(respuesta=>{
-      let respuestaJson = respuesta.json();
-      console.log('respuestaJson: ',respuestaJson);
-    },
-    error=>{
-      console.log("Error ",error);
-    })
-    //el subscribe me sirve para los rquest
-  }
 }
 
 /*class UsuarioClass{

@@ -1,11 +1,11 @@
-<div class="container">
 
+<div class="container">
+  <!--Aqui Inicia el tema de comunicaicon entre sails y angular-->
   <h1>Bienvenidos</h1>
-  <h2>Usuarios</h2>
+  <h2>Json</h2>
   <div class="row">
     <div class="col-sm-6">
       <div class="form-group">
-
         <!--Formularios-->
         <!--el pre | sirve para que me aparezca el json en la web-->
         <pre>
@@ -19,21 +19,45 @@
                [(ngModel)]="nuevoUsuario.nombre"
                 type="text"
                 >
-
       </div>
       <button class="btn btn-success" (click)="crearUsuario()">Crear Usuario
       </button>
     </div>
   </div>
+  <br>
+  <br>
+<h3> Usuarios Ingresados</h3>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let usuario of usuarios; let indice = index;">
+      <br>
+      <h3>{{usuario.nombre}}</h3>
+    <br>
+    <button class="btn btn-danger" (click)="eliminarUsuario(usuario,indice)">Eliminar Usuario
+      </button>
+    </div>
+  </div>
 
+
+  <!--PLANETAS -->
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h3>Planetas</h3>
+  <br>
+  <br>
   <button class="btn btn-outline-success" (click)="cargarPlanetas()">Cargar Planetas</button>
-
+  <br>
+  <br>
   <div class="row">
     <div class="col-sm-4"
          *ngFor="let planeta of planetas;let i = index;">
 
-      <app-planeta-star-wars [planeta]="planeta">
-
+      <app-planeta-star-wars [planeta] ="planeta">
       </app-planeta-star-wars>
 
     </div>
