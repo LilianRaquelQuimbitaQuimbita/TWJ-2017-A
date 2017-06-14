@@ -31,8 +31,12 @@
   <br>
   <div class="row">
     <div class="col-sm-3" *ngFor="let usuario of usuarios; let indice = index;">
+      <br>
       <h3>{{usuario.nombre}}</h3>
-     </div>
+    <br>
+    <button class="btn btn-danger" (click)="eliminarUsuario(usuario,indice)">Eliminar Usuario
+      </button>
+    </div>
   </div>
 
 

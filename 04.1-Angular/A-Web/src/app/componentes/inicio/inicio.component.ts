@@ -135,6 +135,26 @@ export class InicioComponent implements OnInit {
     )
     //el subscribe me sirve para los rquest
   }
+  eliminarUsuario(usuario: UsuarioClass, indice: number) {
+
+    //console.log("Indice:", this.usuarios.indexOf(usuario));
+    //console.log("Indice con index: ", indice);
+    //console.log("Usuarios : ", this.usuarios);
+    //console.log("Usuario con id : ", usuario.id);
+
+    this.usuarios.splice(indice,1);
+
+    this._http.delete("http://localhost:1337/Usuario?id="+usuario.id)
+      .subscribe(respuesta=>{
+          let respuestaJson=respuesta.json();
+          console.log('respuesta: ',respuestaJson);
+        },
+        error=>{
+          console.log("Error ", error)
+        }
+      )
+
+  }
 }
 
 /*class UsuarioClass{
