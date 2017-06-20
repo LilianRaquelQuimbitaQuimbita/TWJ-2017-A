@@ -1,0 +1,66 @@
+.concord-img{
+  position: relative;
+  width: 1100px;
+  Height: 600px;
+
+}
+.bg {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.alert {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 30px;
+  border-color: #b6e7b4;
+  border-radius: 15px;
+
+}
+
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.alert-dismissable, .alert-dismissible {
+  padding-right: 35px;
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert-dismissable .close, .alert-dismissible .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  color: inherit;
+}
+.button.close {
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+}
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.alert h1 {
+  margin: 0;
+  padding-bottom: 5px;
+  font-size: 28px;
+  color: #778074;
+}
