@@ -1,0 +1,90 @@
+
+<div class="container">
+  <div class="cabecera">
+    <!-- 1 fila-->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="Content">
+          <img src="http://cdn.dota2.com/apps/dota2/images/international2017/battlepass/logo.png" alt="">
+        </div>
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+  </div>
+
+  <!--2 Fila-->
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Heroes del Dota</h1>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <!-- 3 fila-->
+
+  <div class="row">
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="form-group">
+
+            <label class="col-form-label">Nombre del Heroe:
+            </label>
+            <input class="form-control"
+                   placeholder="Ingrese nuevo Nombre"
+                   [(ngModel)]="nuevoheroe.nombre"
+                   type="text">
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group">
+
+            <label class="col-form-label">Castillo del Heroe:
+            </label>
+            <input class="form-control"
+                   placeholder="Ingrese el castillo del heroe:"
+                   [(ngModel)]="nuevoheroe.castillo"
+                   type="text">
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group">
+
+            <label class="col-form-label">Nivel del Heroe:
+            </label>
+            <input class="form-control"
+                   placeholder="Ingrese  nivel"
+                   [(ngModel)]="nuevoheroe.nivel"
+                   type="number">
+
+          </div>
+        </div>
+
+
+        <button class="btn btn-success" (click)="crearHeroe()">Crear Heroe
+        </button>
+      </div>
+    </div>
+    <br>
+    <br>
+    <h3> Heroes Ingresados</h3>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-sm-3" *ngFor="let heroe of heroes; let indice = index;">
+        <br>
+        {{heroe.nombre}}
+        <br>
+        {{heroe.castillo}}
+        <br>
+        {{heroe.nivel}}
+
+      </div>
+
+
+    </div>
+</div>

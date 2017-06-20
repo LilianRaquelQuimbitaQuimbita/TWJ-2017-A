@@ -1,0 +1,34 @@
+
+
+<div class="container" style="background-color: black">
+  <div class="cabecera" style="position: relative">
+      <!-- 1 fila-->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="bg" id ="main-creative" >
+            <img class="concord-img"src="https://assets.nflxext.com/ffe/siteui/vlv3/5dfee461-0580-40e3-88fc-5fd3f2e1c10b/f215edf8-e688-4d2d-813c-880a04c06f48/EC-es-20170612-popsignuptwoweeks-perspective_alpha_website_small.jpg" srcset="https://assets.nflxext.com/ffe/siteui/vlv3/5dfee461-0580-40e3-88fc-5fd3f2e1c10b/f215edf8-e688-4d2d-813c-880a04c06f48/EC-es-20170612-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/5dfee461-0580-40e3-88fc-5fd3f2e1c10b/f215edf8-e688-4d2d-813c-880a04c06f48/EC-es-20170612-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/5dfee461-0580-40e3-88fc-5fd3f2e1c10b/f215edf8-e688-4d2d-813c-880a04c06f48/EC-es-20170612-popsignuptwoweeks-perspective_alpha_website_large.jpg 1800w">
+          </div>
+        </div>
+        <div class="col-md-6"></div>
+      </div>
+    </div>
+
+  <br>
+
+  <div class="row">
+    <div class="alert alert-success alert-dismissable mensaje">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <i class="fa fa-success"></i> <h1>PELICULAS ONLINE</h1> Nuestro sitio web tiene como prioridad garantizar la velocidad de cada película con la mejor calidad posible, para que nuestros usuarios puedan disfrutar de [VER-PELICULAS.ORG], la cual tenemos con una gran variedad de <strong>ESTRENOS ONLINE</strong> en sus versiones originales (subtituladas), en español o castellano, y en latino.
+
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+    <div class="row">
+    <div class="col-sm-4" *ngFor="let serie of series; let i=index; ">
+      <app-serie [series]="serie"></app-serie>
+    </div>
+  </div>
+</div>
